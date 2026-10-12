@@ -1,0 +1,108 @@
+*{box-sizing:border-box}
+:root{--cream:#f2f4e9;--paper:#fffdf5;--ink:#25301e;--soft:#68705d;--gold:#d4af37;--gold-light:#f1d77a;--line:#d9c77e;--dark:#11150f;--jamaica:#951528}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Montserrat,sans-serif;font-weight:300;line-height:1.8}.locked{overflow:hidden}.lightbox-open{overflow:hidden}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:1.05}
+h2{font-size:clamp(2.6rem,6vw,4.8rem);margin:12px 0}
+p{margin:8px 0}.muted{color:var(--soft);font-size:.88rem}.kicker{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+button{font-family:inherit;cursor:pointer}
+
+/* Hero */
+.hero{height:100vh;min-height:650px;position:relative;display:grid;place-items:center;text-align:center;color:white;background:var(--hero-image, url("assets/fotos/hero.jpg.jpg")) center/cover fixed}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(#0002,#0006)}
+.hero-content{position:relative;z-index:2}.hero .kicker{color:#eee}
+.hero h1{font-size:clamp(4.2rem,13vw,9rem);margin:15px 0 8px;text-shadow:0 2px 20px #0005}
+.hero p{font-size:1rem;letter-spacing:.12em}.ornament{font-size:1.4rem;margin:12px}.scroll{position:absolute;bottom:25px;z-index:2;font-size:.6rem;letter-spacing:.25em}.scroll span{display:block;font-size:1rem}
+
+/* Secciones */
+.paper{background:var(--paper)}
+.story{text-align:center;padding:110px 25px}
+.story .quote{max-width:650px;margin:28px auto;font:italic 1.55rem/1.6 "Cormorant Garamond",serif}
+.line{height:1px;width:65px;background:var(--gold);margin:28px auto}
+.parents{text-align:center;padding:100px 25px}
+.inner{max-width:1050px;margin:auto}.parent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin:55px 0 25px}
+.parent-grid article{padding:15px 25px;border-left:1px solid var(--line)}
+.parent-grid article:last-child{border-right:1px solid var(--line)}
+.parent-grid span{font-size:.62rem;letter-spacing:.18em;color:var(--gold)}
+.parent-grid h3{font-size:1.65rem;font-weight:400}
+.count{text-align:center;padding:110px 25px;background:#efe6dd}
+.count>p{max-width:650px;margin:auto}.timer{display:flex;justify-content:center;gap:14px;margin-top:45px;flex-wrap:wrap}
+.timer div{width:110px;padding:18px 8px;border:1px solid #cdbbaa;background:#f9f4ee}
+.timer b{display:block;font:500 3.1rem/1 "Cormorant Garamond",serif}.timer small{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase}
+.events{text-align:center;padding:110px 25px}.intro{max-width:650px;margin:auto}
+.event-grid{max-width:1000px;margin:55px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.event{padding:45px 35px;border:1px solid var(--line);background:#fff}
+.event-icon{font:2.5rem Georgia;color:var(--gold);margin-bottom:15px}.event h3{font-size:2.35rem;margin:12px 0}.event a{display:inline-block;margin-top:10px;color:var(--ink);font-size:.72rem;letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--gold)}
+.gallery{text-align:center;padding:110px 25px;max-width:1100px;margin:auto}
+.gallery>p{max-width:650px;margin:auto}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:50px}
+.gallery-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;cursor:pointer;transition:.4s;filter:saturate(.8)}.gallery-grid img:hover{filter:saturate(1);transform:scale(1.015)}
+.rsvp{max-width:850px;margin:auto;text-align:center;padding:110px 25px}.rsvp form{max-width:520px;margin:35px auto 0;display:grid;gap:14px}.rsvp input,.rsvp select{padding:16px;border:1px solid var(--line);background:white;color:var(--ink);font:inherit;outline:none}.rsvp button{padding:16px;background:var(--dark);color:white;border:0;letter-spacing:.12em;text-transform:uppercase;font-size:.65rem}.rsvp button:hover{background:#55443a}
+footer{text-align:center;background:var(--dark);color:white;padding:75px 25px}footer .kicker{color:#cdb39f}footer h2{font-size:3.8rem;margin:12px 0}footer p{color:#cbbdb3;font-size:.75rem;letter-spacing:.1em}
+
+/* Lightbox */
+.lightbox{display:none;position:fixed;z-index:200;inset:0;background:#17120fe8;align-items:center;justify-content:center;padding:60px}
+.lightbox.open{display:flex}.lightbox img{max-width:min(850px,90vw);max-height:80vh;object-fit:contain}
+.lightbox button{position:absolute;background:transparent;border:0;color:white;font-size:3rem;font-family:Georgia}
+#closeLightbox{right:25px;top:15px}.lightbox #prevPhoto{left:25px}.lightbox #nextPhoto{right:25px}
+#photoCounter{position:absolute;bottom:20px;color:white;font-size:.7rem;letter-spacing:.2em}
+
+/* Animaciones */
+.reveal{opacity:0;transform:translateY(30px);transition:1s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:700px){
+ .hero{background-attachment:scroll;min-height:700px}.parent-grid,.event-grid{grid-template-columns:1fr}.parent-grid article{border-left:0;border-bottom:1px solid var(--line);padding-bottom:25px}.parent-grid article:last-child{border-right:0;border-bottom:0}.gallery-grid{grid-template-columns:repeat(2,1fr)}.timer div{width:100px}.lightbox{padding:45px 15px}
+}
+
+/* Control de música */
+.music-toggle{position:fixed;right:18px;bottom:18px;z-index:90;width:48px;height:48px;border-radius:50%;border:1px solid #ffffff80;background:#2d252dcc;color:#fff;backdrop-filter:blur(6px);font-size:18px;display:none;place-items:center;box-shadow:0 5px 20px #0003}.music-toggle.show{display:grid}.music-toggle.playing{animation:spin 4s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Temática Jamaica + dorado */
+body{background:var(--cream);color:var(--ink)}
+.paper{background:var(--paper)}
+.kicker{color:var(--gold)}
+.line{background:var(--gold)}
+.hero{background-color:var(--jamaica)}
+.hero-shade{background:linear-gradient(180deg,#951528dd,#95152888,#0008)}
+.hero .kicker{color:var(--gold-light)}
+.ornament{color:var(--gold-light)}
+.scroll{color:var(--gold-light)}
+.scroll span{color:var(--gold-light);font-size:1.5rem;text-shadow:0 0 10px #d4af3788}
+.parents{background:linear-gradient(135deg,#fff8e8,#f7e4c7)}
+.parent-grid article{border-color:#d4af3780}
+.parent-grid span,.event-icon{color:var(--gold)}
+.count{background:linear-gradient(135deg,#951528,#64101b);color:#fff}
+.count .kicker{color:var(--gold-light)}
+.count .timer div{border-color:#d4af37;background:#fffdf514}
+.count .timer b{color:var(--gold-light)}
+.events{background:var(--paper)}
+.event{border-color:#d4af3780;background:#fffef8}
+.event a{color:var(--jamaica);border-color:var(--gold)}
+.gallery{background:var(--cream)}
+.rsvp{background:var(--paper)}
+.rsvp button{background:var(--jamaica);border:1px solid var(--gold)}
+.rsvp button:hover{background:#245a36}
+footer{background:var(--jamaica);border-top:2px solid var(--gold)}
+footer .kicker{color:var(--gold-light)}
+.music-toggle{border-color:#d4af37;background:#163b24e8;color:var(--gold-light)}
+
+/* Amenizadores */
+.entertainment{text-align:center;padding:110px 25px;background:linear-gradient(180deg,#fff8e8,#f4dfc3)}
+.entertainment .intro{max-width:650px;margin:auto}
+.entertainment-grid{max-width:1050px;margin:50px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.artist-card{background:#fffdf6;border:1px solid #d4af3780;padding:14px;box-shadow:0 8px 25px #163b2412}
+.artist-photo{aspect-ratio:1/1;background:linear-gradient(135deg,#951528,#c05a68);border:2px dashed var(--gold);display:grid;place-items:center;color:var(--gold-light);font-size:.7rem;letter-spacing:.18em;overflow:hidden}
+.artist-photo img{width:100%;height:100%;object-fit:contain;display:block}
+.artist-card h3{font-size:1.25rem;line-height:1.18;min-height:3em;margin:15px 0 3px;color:var(--jamaica);display:flex;align-items:flex-start;justify-content:center;text-align:center}
+.artist-card p{font-size:.75rem;color:var(--soft);margin:0}
+@media(max-width:700px){.entertainment-grid{grid-template-columns:repeat(2,1fr);gap:12px}.artist-card{padding:9px}.artist-card h3{font-size:1rem;min-height:3.5em}}
+
+
+/* Decoración adicional Savvy Red + dorado */
+:root{--jamaica:#951528;--gold:#D4AF37;--gold-light:#F5D77A}
+body{background:radial-gradient(circle at 10% 10%,#95152810 0 90px,transparent 91px),radial-gradient(circle at 90% 85%,#d4af3714 0 120px,transparent 121px),var(--cream)}
+.paper,.parents,.events,.gallery,.rsvp,.entertainment{position:relative;overflow:hidden}
+.paper::before,.parents::before,.events::before,.gallery::before,.rsvp::before,.entertainment::before{content:'✦  ❦  ✦';position:absolute;top:18px;left:0;right:0;text-align:center;color:#d4af37aa;font-size:18px;letter-spacing:18px;pointer-events:none}
+.paper::after,.parents::after,.events::after,.gallery::after,.rsvp::after,.entertainment::after{content:'✦';position:absolute;right:22px;bottom:18px;color:#d4af37aa;font-size:28px;pointer-events:none}
+.event,.artist-card,.timer div{box-shadow:0 8px 28px #95152814, inset 0 0 0 1px #d4af3718}
+.line{height:2px;box-shadow:0 0 12px #d4af3766}
+.scroll span{color:#d4af37}
+.artist-photo{background:linear-gradient(135deg,#951528,#64101b)}
